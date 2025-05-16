@@ -78,6 +78,15 @@ main {
   transform: scale(1.02);
 }
 
+/* Sección de comentarios Utterances */
+#comments {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;
@@ -103,11 +112,4 @@ main {
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
-}
-#comments {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #1a1a1a;
-  border-radius: 4px;
 }
