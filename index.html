@@ -3,31 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OjosGrisesDelRebelde</title>
+  <title>OjosGrises</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
-    <h1>OjosGrisesDelRebelde</h1>
+    <h1>OjosGrises</h1>
     <nav>
       <a href="#">Inicio</a>
-      <a href="#">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resumen">Resumen</a>
     </nav>
   </header>
 
+  <aside id="resumen">
+    <h2>Resumen Mensual</h2>
+    <ul id="meses-lista">
+      <!-- JS rellenará la lista con meses y conteos -->
+    </ul>
+  </aside>
+
   <main>
-    <article class="post">
-      <time datetime="2025-04-25">Viernes 15 de mayo 2025</time>
-      <div class="gallery">
-        <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item">
-        <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item">
-      </div>
-    </article>
+    <section id="galeria">
+      <!-- Agrupamos por mes usando artículos con data-month -->
+      <article class="mes" data-month="2025-04">
+        <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
+        <div class="gallery">
+          <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item" data-date="2025-04-25">
+          <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25">
+        </div>
+      </article>
+      <article class="mes" data-month="2025-05">
+        <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
+        <div class="gallery">
+          <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10">
+          <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12">
+        </div>
+      </article>
+    </section>
   </main>
 
   <!-- Lightbox Overlay -->
   <div id="lightbox" class="lightbox hidden">
-    <span class="close">x</span>
+    <span class="close">×</span>
     <img class="lightbox-img" src="" alt="">
   </div>
 
