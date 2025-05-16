@@ -12,26 +12,33 @@ items.forEach(item => {
   });
 });
 closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
-lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.add('hidden'); });
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) lightbox.classList.add('hidden');
+});
 
-// Agrupación y Conteo por Mes
-window.addEventListener('DOMContentLoaded', () => {
+// IIFE para Agrupación y Conteo por Mes
+(() => {
   const mesesArticulos = document.querySelectorAll('article.mes');
   const resumenLista = document.getElementById('meses-lista');
 
+  console.log('🏷️ Artículos por mes:', mesesArticulos.length);
+
   mesesArticulos.forEach(art => {
-    const month = art.getAttribute('data-month');
+    const month = art.dataset.month;
     const [year, mes] = month.split('-');
-    const nombreMes = new Date(year, mes - 1).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+    const nombreMes = new Date(year, mes - 1)
+                      .toLocaleString('es-ES', { month: 'long', year: 'numeric' });
     const imgs = art.querySelectorAll('.gallery-item');
     const count = imgs.length;
+    console.log(`📅 ${nombreMes}:`, count, 'imágenes');
 
-    // Actualizar título interno
-    art.querySelector('.conteo').textContent = count;
+    // Actualizar contador en el título
+    const contadorSpan = art.querySelector('.conteo');
+    if (contadorSpan) contadorSpan.textContent = count;
 
-    // Crear elemento en resumen
+    // Añadir al resumen
     const li = document.createElement('li');
-    li.innerHTML = `${nombreMes}: <span>${count}</span> imágenes`;  
+    li.innerHTML = `${nombreMes}: <span>${count}</span> imágenes`;
     resumenLista.appendChild(li);
   });
-});
+})();
