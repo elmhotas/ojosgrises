@@ -1,115 +1,75 @@
-/* Reset base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-  background-color: #111;
-  color: #eee;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
 }
 
 header {
+  background-color: #2e2e2e;
+  color: white;
   padding: 1rem;
   text-align: center;
-  border-bottom: 1px solid #333;
 }
-header h1 {
-  font-size: 2rem;
-  letter-spacing: 0.3rem;
-}
-nav {
-  margin-top: 0.5rem;
-}
-nav a {
-  color: #aaa;
+
+header nav a {
+  color: white;
   margin: 0 1rem;
   text-decoration: none;
 }
-nav a:hover {
-  color: #fff;
-}
-
-aside#resumen {
-  background: #1a1a1a;
-  padding: 1rem;
-  max-width: 800px;
-  margin: 1rem auto;
-  border-radius: 4px;
-}
-aside#resumen h2 {
-  margin-bottom: 0.5rem;
-}
-aside#resumen ul {
-  list-style: none;
-}
-aside#resumen li {
-  padding: 0.3rem 0;
-}
-aside#resumen li span {
-  font-weight: bold;
-}
 
 main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-.mes + .mes {
-  margin-top: 2rem;
-}
-.mes h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #ccc;
+  padding: 1rem;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.gallery-item {
-  width: 100%;
+
+.gallery img {
+  width: 200px;
+  height: auto;
   cursor: pointer;
-  border: 2px solid #222;
-  border-radius: 4px;
-  transition: transform 0.3s ease;
-}
-.gallery-item:hover {
-  transform: scale(1.02);
+  border-radius: 5px;
 }
 
-/* Sección de comentarios Utterances */
-#comments {
-  max-width: 800px;
-  margin: 2rem auto;
+aside#resumen {
+  background-color: #eee;
   padding: 1rem;
-  background: #1a1a1a;
-  border-radius: 4px;
+  margin: 1rem;
 }
 
-/* Lightbox */
 .lightbox {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
-.lightbox.hidden {
-  display: none;
-}
+
 .lightbox-img {
   max-width: 90%;
   max-height: 80%;
+  border-radius: 5px;
 }
+
 .close {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 20px;
+  right: 40px;
+  color: white;
   font-size: 2rem;
-  color: #fff;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
